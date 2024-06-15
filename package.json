@@ -1,0 +1,12 @@
+{
+  "name": "aframe-gif-shader",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "git:push": "git push origin master && git push github master:main --force"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
