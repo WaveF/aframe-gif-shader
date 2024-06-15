@@ -2,13 +2,15 @@
 
 **A gif shader for [A-Frame](https://aframe.io) VR - v1.6.0**
 
+[DEMO](https://ax.minicg.com/demo/aframe-gif-shader/index.html)
+
+![demo](images/demo.gif)
+
 Inspired by:
 - [@gtk2k - animation_gif](https://github.com/gtk2k/gtk2k.github.io/tree/master/animation_gif)
 - [mayognaise - aframe-gif-shader](https://github.com/mayognaise/aframe-gif-shader/tree/master)
 
-
 ## Properties
-
 
 | Property | Description | Default Value |
 | -------- | ----------- | ------------- |
