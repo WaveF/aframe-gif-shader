@@ -7,7 +7,7 @@
   <script src="./dist/aframe-gif-shader.min.js"></script>
 </head>
 <body>
-  <a-scene>
+  <a-scene vr-mode-ui="enabled:false;">
     <a-entity position="0 0 -100" geometry="primitive:plane; width:200; height:200" material="color:#ccc" gif-shader="src:./images/02.gif;play:false"></a-entity>
     <a-entity position="1 0 -3" geometry="primitive:box;" material="color:#ccc" gif-shader="src:./images/04.gif; speed:1"></a-entity>
     <a-entity position="-1 0 -3" geometry="primitive:sphere;radius:.7;" material="color:#ccc" gif-shader="src:./images/01.gif;"></a-entity>
