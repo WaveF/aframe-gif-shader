@@ -4,6 +4,7 @@ AFRAME.registerComponent('gif-shader', {
     speed: { default: 1 },
     play: { default: true },
     blending: { default: 'none' },
+    side: { default: 'front' },
     transparent: { default: true },
     opacity: { default: 1 },
     alphaTest: { default: 0.5 },
@@ -74,9 +75,15 @@ AFRAME.registerComponent('gif-shader', {
       'multiply': THREE.MultiplyBlending,
       'subtractive': THREE.SubtractiveBlending
     };
+    const side = {
+      'double': THREE.DoubleSide,
+      'front': THREE.FrontSide,
+      'back': THREE.BackSide,
+    };
 
     this.el.getObject3D('mesh').material = new THREE.MeshBasicMaterial({
       map: this.texture,
+      side: side[this.data.side] || THREE.FrontSide,
       blending: blendingModes[this.data.blending] || THREE.NoBlending,
       transparent: this.data.transparent,
       opacity: this.data.opacity,
