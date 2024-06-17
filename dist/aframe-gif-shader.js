@@ -3,6 +3,10 @@ AFRAME.registerComponent('gif-shader', {
     src: { default: '' },
     speed: { default: 1 },
     play: { default: true },
+    blending: { default: 'none' },
+    transparent: { default: true },
+    opacity: { default: 1 },
+    alphaTest: { default: 0.5 },
   },
   init() {
     // 初始化各种属性
@@ -61,10 +65,22 @@ AFRAME.registerComponent('gif-shader', {
     this.texture = new THREE.Texture(this.cnv);
     this.texture.minFilter = THREE.LinearFilter;
     this.texture.magFilter = THREE.LinearFilter;
+
+    // 混合模式
+    const blendingModes = {
+      'none': THREE.NoBlending,
+      'normal': THREE.NormalBlending,
+      'additive': THREE.AdditiveBlending,
+      'multiply': THREE.MultiplyBlending,
+      'subtractive': THREE.SubtractiveBlending
+    };
+
     this.el.getObject3D('mesh').material = new THREE.MeshBasicMaterial({
       map: this.texture,
-      transparent: true,
-      alphaTest: 0.5
+      blending: blendingModes[this.data.blending] || THREE.NoBlending,
+      transparent: this.data.transparent,
+      opacity: this.data.opacity,
+      alphaTest: this.data.alphaTest,
     });
   },
   onGIFLoadError(err) {

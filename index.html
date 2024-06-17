@@ -4,13 +4,13 @@
   <meta charset="utf-8" />
   <title>aframe-gif-shader</title>
   <script src="https://cdn.jsdelivr.net/npm/aframe@1.6.0/dist/aframe-master.min.js"></script>
-  <script src="./dist/aframe-gif-shader.min.js"></script>
+  <script src="./dist/aframe-gif-shader.js"></script>
 </head>
 <body>
   <a-scene vr-mode-ui="enabled:false;">
-    <a-entity position="0 0 -100" geometry="primitive:plane; width:200; height:200" material="color:#ccc" gif-shader="src:./images/02.gif;play:false"></a-entity>
-    <a-entity position="1 0 -3" geometry="primitive:box;" material="color:#ccc" gif-shader="src:./images/04.gif; speed:1"></a-entity>
-    <a-entity position="-1 0 -3" geometry="primitive:sphere;radius:.7;" material="color:#ccc" gif-shader="src:./images/01.gif;"></a-entity>
+    <a-entity position="0 0 -100" geometry="primitive:plane; width:200; height:200" gif-shader="src:./images/02.gif; play:false"></a-entity>
+    <a-entity position="1 0 -3" geometry="primitive:box;" gif-shader="src:./images/04.gif; speed:1;"></a-entity>
+    <a-entity position="-1 0 -3" geometry="primitive:sphere;radius:.7;" gif-shader="src:./images/01.gif; blending:additive;"></a-entity>
   </a-scene>
 
   <script type="module">

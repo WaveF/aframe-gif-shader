@@ -14,9 +14,10 @@ Inspired by:
 
 | Property | Description | Default Value |
 | -------- | ----------- | ------------- |
-| src      | image url   | ""            |
+| src      | image url   | ''            |
 | speed    | limited to 1 at the beginning, can change after init | 1 |
 | play     | play or pause | true |
+| blending | none, normal, additive, multiply, subtract | 'none' |
 
 
 ## Usage
